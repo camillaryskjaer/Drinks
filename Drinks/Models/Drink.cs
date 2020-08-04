@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Drinks.Models
@@ -9,7 +10,8 @@ namespace Drinks.Models
     {
         [Key]
         public string Name { get; set; }
-        public List<Ingredient> Ingredients { get; set; }
+
+        public virtual ICollection<Ingredient> Ingredients { get; set; }
 
     }
 }

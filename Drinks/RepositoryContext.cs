@@ -15,9 +15,9 @@ namespace Drinks
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString); 
+            optionsBuilder.UseLazyLoadingProxies().UseSqlServer(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString); 
         }
-        DbSet<Drink> Drinks { get; set; }
+        public DbSet<Drink> Drinks { get; set; }
         DbSet<Ingredient> Ingredients { get; set; }
     }
 }

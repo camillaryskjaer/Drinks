@@ -20,11 +20,15 @@ namespace Drinks.Repository
         {
             List<Drink> returnDrinks = new List<Drink>();
             List<Drink> allDrinks = FindAll().OrderBy(drink => drink.Name).ToList();
-            foreach (var item in allDrinks)
+            foreach (var drink in allDrinks)
             {
-                if (item.Name == ingredientName)
+                foreach (var ingredient in drink.Ingredients)
                 {
-                    returnDrinks.Add(item);
+                    if (ingredient.Name == ingredientName)
+                    {
+
+                        returnDrinks.Add(drink);
+                    }
                 }
             }
             return returnDrinks;
