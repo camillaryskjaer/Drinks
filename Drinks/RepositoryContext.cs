@@ -7,6 +7,8 @@ using System.Text;
 
 namespace Drinks
 {
+    
+    //Øv jeg havde troet du fik oprettet et repository. Du må ikke kalde nog et repository når det ikke er det!
     public class RepositoryContext : DbContext
     {
         public RepositoryContext() : base()
